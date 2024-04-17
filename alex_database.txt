@@ -1,0 +1,100 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: 17. Apr, 2024 09:14 AM
+-- Tjener-versjon: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `mydb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur for tabell `bruker`
+--
+
+CREATE TABLE `bruker` (
+  `idbruker` int(11) NOT NULL,
+  `brukernavn` varchar(45) DEFAULT NULL,
+  `passord` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dataark for tabell `bruker`
+--
+
+INSERT INTO `bruker` (`idbruker`, `brukernavn`, `passord`) VALUES
+(1, 'bruker1', 'passord1'),
+(3, 'bruker3', 'passord3'),
+(4, 'bruker1', 'passord1'),
+(5, 'bruker2', 'passord2'),
+(6, 'bruker3', 'passord3'),
+(7, 'bruker1', 'passord1'),
+(8, 'bruker2', 'passord2'),
+(9, 'bruker3', 'passord3'),
+(10, 'heisan', '1234567'),
+(11, 'ole', 'olebrum'),
+(12, 'alexalex', '12345678'),
+(13, 'x', 'y');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur for tabell `reaction`
+--
+
+CREATE TABLE `reaction` (
+  `idreaction` int(11) NOT NULL,
+  `score` varchar(45) NOT NULL,
+  `bruker` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dataark for tabell `reaction`
+--
+
+INSERT INTO `reaction` (`idreaction`, `score`, `bruker`) VALUES
+(0, '394', 12),
+(0, '930', 12),
+(0, '488', 11),
+(0, '397', 12),
+(0, '454', 12);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `bruker`
+--
+ALTER TABLE `bruker`
+  ADD PRIMARY KEY (`idbruker`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `bruker`
+--
+ALTER TABLE `bruker`
+  MODIFY `idbruker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
